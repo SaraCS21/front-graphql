@@ -10,9 +10,9 @@ const Select = () => {
     if (error) return <p>Error : {error.message}</p>;
 
     return (
-        <select className="appearance-none border rounded p-2 mb-3 focus:outline-none focus:border-purple" name="category" id="category">
+        <select className="appearance-none border rounded p-2 mb-3 focus:outline-none focus:border-purple" name="categoryId" id="categoryId">
             {
-                categories.map(category => <option className="p-2" defaultValue={category.id} key={uuidv4()}>{category.name}</option>)
+                categories.map(category => <option className="p-2" value={category.id} key={uuidv4()}>{category.name}</option>)
             }
         </select>
     );
