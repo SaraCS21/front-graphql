@@ -1,10 +1,14 @@
 import { useMutation } from "@apollo/client"
+import { useState } from "react"
 import { RiDeleteBin6Line } from "react-icons/ri"
 import { AiOutlineEdit } from "react-icons/ai"
+import Modal from "@components/Modal"
 import { GET_PRODUCTS } from "../queries.js"
 import { DELETE_PRODUCT } from "../mutation.js"
 
 const ProductItem = ({ product }) => {
+  const [showModal, setShowModal] = useState(false);
+
   const [deleteProduct, { data, loading, error }] = useMutation(DELETE_PRODUCT, {
     refetchQueries: [
       {query: GET_PRODUCTS}, // DocumentNode object parsed with gql
@@ -23,7 +27,7 @@ const ProductItem = ({ product }) => {
   if (error) return `Submission error! ${error.message}`;
 
   return (
-    <li className="w-[19%] flex flex-col justify-between border border-slate-300 rounded shadow p-5 mt-4 hover:cursor-pointer hover:scale-[105%]">
+    <li className="w-[19%] flex flex-col justify-between border border-slate-300 rounded shadow p-5 mt-4 hover:cursor-pointer">
         <img className="w-[90%] h-48 self-center" src={image} alt={name} />
         <div className="p-3">
             <p className="text-purple font-medium">{categoryName}</p>
@@ -31,12 +35,18 @@ const ProductItem = ({ product }) => {
             <div className="flex justify-between items-center mt-2">
                 <p className="text-red-500">{price}€</p>
                 <div className="flex">
-                    <div className="bg-red-500 rounded p-1.5 mr-2" onClick={handleDeleteProduct}>
+                    <button className="bg-red-500 rounded p-1.5 mr-2" onClick={handleDeleteProduct}>
                         <RiDeleteBin6Line />
-                    </div>
-                    <div className="bg-amber-500 rounded p-1.5">
+                    </button>
+                    <button className="bg-amber-500 rounded p-1.5" onClick={() => setShowModal(true)}>
                         <AiOutlineEdit />
-                    </div>
+                    </button>
+
+                    <>
+                      {showModal ? (
+                        <Modal setShowModal={setShowModal}/>
+                      ) : null}
+                    </>
                 </div>
             </div>
         </div>
