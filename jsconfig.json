@@ -11,6 +11,12 @@
             "@containers/*": [
                 "containers/*"
             ],
+            "@graphql/*": [
+                "graphql/*"
+            ],
+            "@utils/*": [
+                "utils/*"
+            ]
         }
     }
 }
