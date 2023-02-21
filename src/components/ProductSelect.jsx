@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 import { v4 as uuidv4 } from "uuid";
 import { GET_CATEGORIES } from "@graphql/queries";
 
-const ProductSelect = ({ categoryId, filter, refetch }) => {
+const ProductSelect = ({ categoryId }) => {
 
     const { loading, error, data } = useQuery(GET_CATEGORIES);  
     const categories = data?.allCategories

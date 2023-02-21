@@ -22,7 +22,7 @@ const CategorySelect = ({ refetch }) => {
     if (error) return <p>Error : {error.message}</p>;
 
     return (
-        <select className="appearance-none border rounded p-2 mb-3 focus:outline-none focus:border-purple" name="categoryId" id="categoryId" value={currentCategory} ref={selectRef} onChange={handleChangeCategory}>
+        <select className="appearance-none border rounded p-2 ml-3 focus:outline-none focus:border-purple" name="categoryId" id="categoryId" value={currentCategory} ref={selectRef} onChange={handleChangeCategory}>
             <option className="p-2" value="todos" key={uuidv4()}>Todos</option>
             {
                 categories.map(category => <option className="p-2" value={category.id} key={uuidv4()}>{category.name}</option>)

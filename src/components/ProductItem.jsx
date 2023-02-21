@@ -9,7 +9,7 @@ import { DELETE_PRODUCT } from "@graphql/mutation.js"
 const ProductItem = ({ product }) => {
   const [showModal, setShowModal] = useState(false);
 
-  const [deleteProduct, { data, loading, error }] = useMutation(DELETE_PRODUCT, {
+  const [deleteProduct, { loading, error }] = useMutation(DELETE_PRODUCT, {
     refetchQueries: [
       {query: GET_PRODUCTS}, // DocumentNode object parsed with gql
       'GetProducts' // Query name
