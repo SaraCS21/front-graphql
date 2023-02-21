@@ -8,7 +8,9 @@ const getAlliases = () => {
     "@components": resolve("src/components"),
     "@containers": resolve("src/containers"),
     "@graphql": resolve("src/graphql"),
-    "@utils": resolve("src/utils")
+    "@utils": resolve("src/utils"),
+    "@routes": resolve("src/routes"),
+    "@pages": resolve("src/pages")
   }
 }
 
