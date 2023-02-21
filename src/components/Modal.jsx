@@ -1,5 +1,6 @@
 import { useQuery, useMutation } from "@apollo/client";
 import Select from "@components/Select";
+import { formatProductUpdate } from "@utils/functions";
 import client from "@graphql/client";
 import { GET_PRODUCTS, GET_PRODUCT } from "@graphql/queries";
 import { UPDATE_PRODUCT } from "@graphql/mutation";
@@ -20,20 +21,13 @@ const Modal = ({ setShowModal, id }) => {
     const handleUpdateProduct = async event => {
         event.preventDefault();
 
-        const { name, price, categoryId, description } = event.target.elements;
-        const nameAndDescription = [name, description].map(input => [input.name,input.value]);
-        const priceAndCategory = [price, categoryId].map(input => {
-            const value = input.name === "price" ? parseFloat(input.value) : parseInt(input.value);
-
-            return [input.name, value];
-        });
-
-        const input = Object.fromEntries([...nameAndDescription, ...priceAndCategory]);
+        const input = formatProductUpdate(event.target.elements);
 
         updateProduct({ variables: { updateProductId: id, input } });
         await client.refetchQueries({
             include: "active",
         });
+        
         setShowModal(false);
     }
 

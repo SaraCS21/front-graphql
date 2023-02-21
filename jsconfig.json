@@ -14,6 +14,9 @@
             "@graphql/*": [
                 "graphql/*"
             ],
+            "@utils/*": [
+                "utils/*"
+            ]
         }
     }
 }
