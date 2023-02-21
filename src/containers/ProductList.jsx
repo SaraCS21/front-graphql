@@ -7,8 +7,6 @@ const ProductList = () => {
     const { loading, error, data } = useQuery(GET_PRODUCTS);
     const products = data?.allProducts
 
-    console.log(products)
-
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error : {error.message}</p>;
 

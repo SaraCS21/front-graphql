@@ -44,7 +44,7 @@ const ProductItem = ({ product }) => {
 
                     <>
                       {showModal ? (
-                        <Modal setShowModal={setShowModal}/>
+                        <Modal setShowModal={setShowModal} id={id}/>
                       ) : null}
                     </>
                 </div>
