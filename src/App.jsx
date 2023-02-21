@@ -1,17 +1,12 @@
-import ProductList from "@containers/ProductList"
-import ShopActions from "@containers/ShopActions"
-import Header from "@components/Header"
+import Header from "@components/Header";
+import Products from "@containers/Products";
 
-const App = () => {
-  return (
-    <>    
-      <Header />
-      <div className="App">
-        <ShopActions />
-        <ProductList />
-      </div>
-    </>
-  )
-}
+const App = () => (
+  <>    
+    <Header />
+    <Products />
+  </>
+)
+
 
 export default App

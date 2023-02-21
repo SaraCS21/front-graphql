@@ -1,8 +1,8 @@
 import { useMutation } from "@apollo/client";
 import { formatProduct } from "@utils/functions";
-import Select from "@components/Select";
+import ProductSelect from "@components/ProductSelect";
 import client from "@graphql/client";
-import { GET_PRODUCT, GET_PRODUCTS } from "@graphql/queries";
+import { GET_PRODUCTS } from "@graphql/queries";
 import { CREATE_PRODUCT } from "@graphql/mutation";
 
 const NewModal = ({ setShowModal }) => {
@@ -56,7 +56,7 @@ const NewModal = ({ setShowModal }) => {
                                     <input className="border rounded p-2 mb-3 focus:outline-none focus:border-purple" type="text" name="image" id="image"/>
                                     
                                     <label className="mb-2 font-semibold" htmlFor="categoryId">Categoría</label>
-                                    <Select />
+                                    <ProductSelect />
 
                                     <label className="mb-2 font-semibold" htmlFor="description">Descripción</label>
                                     <textarea className="border rounded p-2 mb-3 resize-none focus:outline-none focus:border-purple" name="description" id="description" rows="6"></textarea>
