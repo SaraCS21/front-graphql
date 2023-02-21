@@ -17,7 +17,7 @@ const Header = () => {
 
                 <div className='w-2/4 flex justify-center items-center'>
                     <input className='w-full h-10 pl-3 rounded-l-lg border' name="search" placeholder='Busca un producto...' />
-                    <div className='w-[10%] h-10 flex justify-center items-center bg-[#9d2888] text-white text-xl rounded-r-lg'>
+                    <div className='w-[10%] h-10 flex justify-center items-center bg-purple text-white text-xl rounded-r-lg'>
                         <BiSearch />
                     </div>
                 </div>

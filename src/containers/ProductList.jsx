@@ -1,7 +1,7 @@
-import React from 'react';
 import { useQuery } from '@apollo/client';
 import { v4 as uuidv4 } from "uuid";
 import { GET_PRODUCTS } from '../queries';
+import ProductItem from "@components/ProductItem"
 
 const ProductList = () => {
     const { loading, error, data } = useQuery(GET_PRODUCTS);
@@ -13,9 +13,9 @@ const ProductList = () => {
     if (error) return <p>Error : {error.message}</p>;
 
     return (
-        <ul>
+        <ul className='w-[85%] flex flex-wrap justify-between mx-auto py-6'>
             {
-                products.map(product => <li key={uuidv4()}>{product.name}</li>)
+                products.map(product => <ProductItem key={uuidv4()} product={product}/>)
             }
         </ul>
     )
