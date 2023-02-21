@@ -16,6 +16,12 @@
             ],
             "@utils/*": [
                 "utils/*"
+            ],
+            "@routes/*": [
+                "routes/*"
+            ],
+            "@pages/*": [
+                "pages/*"
             ]
         }
     }

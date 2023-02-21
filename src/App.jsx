@@ -1,12 +1,5 @@
-import Header from "@components/Header";
-import Products from "@containers/Products";
+import AppRouter from "@routes/AppRouter"
 
-const App = () => (
-  <>    
-    <Header />
-    <Products />
-  </>
-)
-
+const App = () => <AppRouter />
 
 export default App
