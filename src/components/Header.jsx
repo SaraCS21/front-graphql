@@ -1,11 +1,7 @@
-import React from 'react';
 import logo from "@assets/logo.png";
-
 import { BiSearch } from 'react-icons/bi';
 import { AiOutlineUser, AiOutlineShoppingCart } from 'react-icons/ai';
 import { BsSuitHeart } from 'react-icons/bs';
-
-
 
 const Header = () => {
     return (
@@ -27,7 +23,7 @@ const Header = () => {
                         <AiOutlineUser className='text-3xl'/>
                         <div className='pl-2'>
                             <p className='text-[0.7rem] text-zinc-400'>Sign in</p>
-                            <p className='text-[1rem]'>Account</p>
+                            <p className='text-[1rem]'>Cuenta</p>
                         </div>
                     </div>
 
@@ -40,7 +36,7 @@ const Header = () => {
                         <AiOutlineShoppingCart className='text-3xl'/>
                         <div className='pl-2'>
                             <p className='text-[0.7rem] text-zinc-400'>Total</p>
-                            <p className='text-[1rem]'>$0.00</p>
+                            <p className='text-[1rem]'>0.00€</p>
                         </div>
                         <div className='w-[1.1rem] h-[1.1rem] flex justify-center items-center rounded-full text-[0.6rem] text-white bg-red-500 absolute top-0 left-4'>0</div>
                     </div>

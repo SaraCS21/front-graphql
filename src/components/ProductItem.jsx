@@ -11,13 +11,13 @@ const ProductItem = ({ product }) => {
         <div className="p-3">
             <p className="text-purple font-medium">{categoryName}</p>
             <h2 className="text-lg font-semibold">{name}</h2>
-            <div className="flex justify-between">
+            <div className="flex justify-between items-center mt-2">
                 <p className="text-red-500">{price}€</p>
                 <div className="flex">
-                    <div className="bg-red-500 rounded p-1 mr-2">
+                    <div className="bg-red-500 rounded p-1.5 mr-2">
                         <RiDeleteBin6Line />
                     </div>
-                    <div className="bg-amber-500 rounded p-1">
+                    <div className="bg-amber-500 rounded p-1.5">
                         <AiOutlineEdit />
                     </div>
                 </div>
