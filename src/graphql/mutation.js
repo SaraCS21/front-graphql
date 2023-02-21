@@ -16,7 +16,18 @@ const UPDATE_PRODUCT= gql`
     }
 `;
 
+const CREATE_PRODUCT= gql`
+    mutation createProduct($input: CreateProductInput!){
+        addProduct(input: $input) {
+            id,
+            name,
+            description
+        }
+    }
+`;
+
 export {
     DELETE_PRODUCT,
-    UPDATE_PRODUCT
+    UPDATE_PRODUCT,
+    CREATE_PRODUCT
 }
