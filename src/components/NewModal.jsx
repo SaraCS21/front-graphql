@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { formatProduct } from "@utils/functions";
-import Select from "@components/Select";
+import Select from "@components/CategorySelect";
 import client from "@graphql/client";
 import { GET_PRODUCT, GET_PRODUCTS } from "@graphql/queries";
 import { CREATE_PRODUCT } from "@graphql/mutation";

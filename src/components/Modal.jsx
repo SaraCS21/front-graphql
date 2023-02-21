@@ -1,5 +1,5 @@
 import { useQuery, useMutation } from "@apollo/client";
-import Select from "@components/Select";
+import ProductSelect from "@components/ProductSelect";
 import { formatProduct } from "@utils/functions";
 import client from "@graphql/client";
 import { GET_PRODUCTS, GET_PRODUCT } from "@graphql/queries";
@@ -62,7 +62,7 @@ const Modal = ({ setShowModal, id }) => {
                                     <input className="border rounded p-2 mb-3 focus:outline-none focus:border-purple" type="text" name="image" id="image" defaultValue={product.image}/>
                                     
                                     <label className="mb-2 font-semibold" htmlFor="categoryId">Categoría</label>
-                                    <Select categoryId={product.categoryId}/>
+                                    <ProductSelect categoryId={product.categoryId}/>
 
                                     <label className="mb-2 font-semibold" htmlFor="description">Descripción</label>
                                     <textarea className="border rounded p-2 mb-3 resize-none focus:outline-none focus:border-purple" name="description" id="description" rows="6" defaultValue={product.description}></textarea>
