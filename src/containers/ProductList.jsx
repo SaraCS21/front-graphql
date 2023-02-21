@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import { v4 as uuidv4 } from "uuid";
-import { GET_PRODUCTS } from '../queries';
+import { GET_PRODUCTS } from '@graphql/queries';
 import ProductItem from "@components/ProductItem"
 
 const ProductList = () => {

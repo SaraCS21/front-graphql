@@ -1,21 +1,40 @@
-import { GET_PRODUCT } from "../queries";
-import { useQuery } from "@apollo/client";
-import Select from "./Select";
+import { useQuery, useMutation } from "@apollo/client";
+import Select from "@components/Select";
+import client from "@graphql/client";
+import { GET_PRODUCTS, GET_PRODUCT } from "@graphql/queries";
+import { UPDATE_PRODUCT } from "@graphql/mutation";
 
 const Modal = ({ setShowModal, id }) => {
-    const { loading, error, data } = useQuery(GET_PRODUCT, {
+    const { data } = useQuery(GET_PRODUCT, {
         variables: { productId: id },
+    });
+
+    const [updateProduct] = useMutation(UPDATE_PRODUCT, {
+        refetchQueries: [
+          {query: GET_PRODUCTS},
+        ],
     });
 
     const product = data?.product;
 
-    const handleUpdateProduct = event => {
-        event.preventDefault()
+    const handleUpdateProduct = async event => {
+        event.preventDefault();
 
-        const { name, price, categoryId, description } = event.target.elements
-        const values = [name, price, categoryId, description].map(input => [input.name,input.value])
+        const { name, price, categoryId, description } = event.target.elements;
+        const nameAndDescription = [name, description].map(input => [input.name,input.value]);
+        const priceAndCategory = [price, categoryId].map(input => {
+            const value = input.name === "price" ? parseFloat(input.value) : parseInt(input.value);
 
-        const input = Object.fromEntries(values)
+            return [input.name, value];
+        });
+
+        const input = Object.fromEntries([...nameAndDescription, ...priceAndCategory]);
+
+        updateProduct({ variables: { updateProductId: id, input } });
+        await client.refetchQueries({
+            include: "active",
+        });
+        setShowModal(false);
     }
 
     return (
@@ -46,7 +65,7 @@ const Modal = ({ setShowModal, id }) => {
                                     <input className="border rounded p-2 mb-3 focus:outline-none focus:border-purple" type="number" name="price" id="price" defaultValue={product.price}/>
                                     
                                     <label className="mb-2 font-semibold" htmlFor="categoryId">Categoría</label>
-                                    <Select />
+                                    <Select categoryId={product.categoryId}/>
 
                                     <label className="mb-2 font-semibold" htmlFor="description">Descripción</label>
                                     <textarea className="border rounded p-2 mb-3 resize-none focus:outline-none focus:border-purple" name="description" id="description" rows="6" defaultValue={product.description}></textarea>

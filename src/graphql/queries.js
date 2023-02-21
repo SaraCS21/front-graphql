@@ -18,10 +18,11 @@ const GET_PRODUCTS = gql`
 const GET_PRODUCT = gql`
     query Product($productId: ID!) {
         product(id: $productId) {
-        name,
-        description,
-        price,
-        categoryId
+            name,
+            description,
+            price,
+            categoryId,
+            image
         }
     }
 `;
