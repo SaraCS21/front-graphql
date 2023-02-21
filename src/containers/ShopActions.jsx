@@ -1,6 +1,4 @@
-import { CREATE_PRODUCT } from "@graphql/mutation"
 import { useState } from "react"
-import { GrFormAdd } from "react-icons/gr"
 import Select from "@components/Select";
 import NewModal from "@components/NewModal";
 
