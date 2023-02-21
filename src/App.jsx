@@ -1,4 +1,4 @@
-import ListProducts from "@components/ListProducts"
+import ProductList from "@containers/ProductList"
 import Header from "@components/Header"
 
 const App = () => {
@@ -6,7 +6,7 @@ const App = () => {
     <>    
       <Header />
       <div className="App">
-        <ListProducts />
+        <ProductList />
       </div>
     </>
   )

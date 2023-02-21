@@ -3,7 +3,11 @@ module.exports = {
   mode: "jit",
   content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        purple: "#9d2888"
+      }
+    },
   },
   plugins: [],
 }
