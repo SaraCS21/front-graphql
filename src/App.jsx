@@ -1,4 +1,5 @@
 import ProductList from "@containers/ProductList"
+import ShopActions from "@containers/ShopActions"
 import Header from "@components/Header"
 
 const App = () => {
@@ -6,6 +7,7 @@ const App = () => {
     <>    
       <Header />
       <div className="App">
+        <ShopActions />
         <ProductList />
       </div>
     </>
