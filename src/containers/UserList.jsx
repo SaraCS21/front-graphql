@@ -18,7 +18,7 @@ const UserList = () => {
 
 
     return (
-        <ul className='w-[85%] flex flex-wrap justify-start mx-auto py-6'>
+        <ul className='w-[85%] flex flex-wrap justify-center lg:justify-start mx-auto py-6'>
             {
                 users.map(user => <UserItem key={uuidv4()} user={user}/>)
             }

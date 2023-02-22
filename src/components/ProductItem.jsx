@@ -27,7 +27,7 @@ const ProductItem = ({ product }) => {
   if (error) return `Submission error! ${error.message}`;
 
   return (
-    <li className="w-[19%] flex flex-col justify-between border border-slate-300 rounded shadow p-5 mt-4 mr-3 hover:cursor-pointer">
+    <li className="w-5/6 lg:w-[19%] flex flex-col justify-between border border-slate-300 rounded shadow p-5 mt-4 mr-3 hover:cursor-pointer">
         <img className="w-[90%] h-48 self-center" src={image} alt={name} />
         <div className="p-3">
             <p className="text-purple font-medium">{categoryName}</p>
