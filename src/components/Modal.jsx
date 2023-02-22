@@ -34,8 +34,8 @@ const Modal = ({ setShowModal, id }) => {
     return (
         product ? (
             <>
-                <form className="w-2/3 mx-auto justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none" onSubmit={handleUpdateProduct}>
-                    <div className="relative w-1/2">
+                <form className="lg:w-2/3 lg:h-auto h-[20%] mx-auto justify-center items-center flex lg:overflow-x-hidden lg:overflow-y-auto fixed right-3 top-0 lg:inset-0 z-50 outline-none focus:outline-none" onSubmit={handleUpdateProduct}>
+                    <div className="relative lg:w-1/2 w-[95%]">
                         <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                             {/*header*/}
                             <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
