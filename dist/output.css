@@ -662,6 +662,26 @@ video {
   width: 83.333333%;
 }
 
+.max-w-\[\] {
+  max-width: ;
+}
+
+.max-w-\[30ch\] {
+  max-width: 30ch;
+}
+
+.max-w-\[20ch\] {
+  max-width: 20ch;
+}
+
+.max-w-\[10ch\] {
+  max-width: 10ch;
+}
+
+.max-w-\[\.5rem\] {
+  max-width: .5rem;
+}
+
 .resize-none {
   resize: none;
 }
@@ -897,6 +917,11 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .font-bold {
