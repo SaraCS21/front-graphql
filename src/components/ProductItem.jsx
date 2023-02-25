@@ -1,10 +1,12 @@
-import { useState } from "react"
-import { useMutation } from "@apollo/client"
-import { RiDeleteBin6Line } from "react-icons/ri"
-import { AiOutlineEdit } from "react-icons/ai"
-import Modal from "@components/Modal"
-import { GET_PRODUCTS } from "@graphql/queries.js"
-import { DELETE_PRODUCT } from "@graphql/mutation.js"
+import { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { AiOutlineEdit } from "react-icons/ai";
+import Loading from "@components/Loading";
+import Error from "@components/Error";
+import Modal from "@components/Modal";
+import { GET_PRODUCTS } from "@graphql/queries.js";
+import { DELETE_PRODUCT } from "@graphql/mutation.js";
 
 const ProductItem = ({ product }) => {
   const [showModal, setShowModal] = useState(false);
@@ -23,11 +25,11 @@ const ProductItem = ({ product }) => {
     deleteProduct({ variables: { deleteProductId: id } });
   }
 
-  if (loading) return 'Submitting...';
-  if (error) return `Submission error! ${error.message}`;
+  if (loading) return <Loading />;
+  if (error) return <Error message={`Submission error! ${error.message}`}/>;
 
   return (
-    <li className="w-[19%] flex flex-col justify-between border border-slate-300 rounded shadow p-5 mt-4 mr-3 hover:cursor-pointer">
+    <li className="w-5/6 lg:w-[19%] flex flex-col justify-between border border-slate-300 rounded shadow p-5 mt-4 mr-3 hover:cursor-pointer">
         <img className="w-[90%] h-48 self-center" src={image} alt={name} />
         <div className="p-3">
             <p className="text-purple font-medium">{categoryName}</p>
