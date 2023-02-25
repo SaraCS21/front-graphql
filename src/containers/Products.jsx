@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { GET_PRODUCTS } from '@graphql/queries';
 import Loading from '@components/Loading';
+import Error from '@components/Error';
 import ProductList from "@containers/ProductList";
 import ShopActions from "@containers/ShopActions";
 
@@ -12,7 +13,7 @@ const Products = () => {
   const products = data?.productsByCategory
     
   if (loading) return <Loading />;
-  if (error) return <p>Error : {error.message}</p>;
+  if (error) return <Error message={`Error : ${error.message}`}/>;
       
   return (
     <>
