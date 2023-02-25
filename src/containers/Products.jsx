@@ -1,7 +1,8 @@
 import { useQuery } from '@apollo/client';
 import { GET_PRODUCTS } from '@graphql/queries';
-import ProductList from "@containers/ProductList"
-import ShopActions from "@containers/ShopActions"
+import Loading from '@components/Loading';
+import ProductList from "@containers/ProductList";
+import ShopActions from "@containers/ShopActions";
 
 const Products = () => {
   const { loading, error, data, refetch } = useQuery(GET_PRODUCTS, {
@@ -10,7 +11,7 @@ const Products = () => {
 
   const products = data?.productsByCategory
     
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>Error : {error.message}</p>;
       
   return (
